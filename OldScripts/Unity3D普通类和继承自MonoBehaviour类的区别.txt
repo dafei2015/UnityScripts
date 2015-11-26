@@ -1,0 +1,8 @@
+Unity3D普通类和继承自MonoBehaviour类的区别 
+Posted on 2013年04月15日 by U3d / Unity3D 基础教程/被围观 195 次 
+
+Unity3D普通类和继承自MonoBehaviour类的区别。如果创建新的类时，使用的是在unity editor的project视图中右键，create javascript or c#方式，那么创建的类都是默认继承自MonoBehaviour, 生成后可以查看类文件，会发现c#类继承自MonoBehaviour， 虽然javascript的类前面没有这个继承自MonoBehaviour的关键字样，但是默认也是从它继承而来，这是Unity的规定。
+ 
+这样的类和普通没有继承自MonoBehaviour的类，有什么区别呢？继承自MonoBehaviour的类，不需要自己创建它的实例，也不能自己创建（如 new 类名），编译的时候可以编译过去，但是执行的时候会给你一个错误在unity editor的console窗口，并且你new 后得到的东西为空；其实这是Unity的一个bug，既然继承自MonoBehaviour的类不能new出来，为什么在编译的时候就给个错误，而是在运行时，如果没有看到unity editor的console窗口的内容真的很难知道为什么new的东西为空。
+ 
+为什么不需要自己创建呢？因为所有从MonoBehaviour继承过来的类，Unity都会自动创建实例，并且调用被重载的方法，如我们经常用到的Awake, Start, Update等。而普通类，就可以用new来创建实例了。

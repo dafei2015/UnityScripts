@@ -1,0 +1,10 @@
+Unity3D的文件夹与作用域 
+
+
+Unity3D中在Assets下创建文件夹 jsTest，在里面新建一个js脚本。写入测试函数：
+ 
+static function FuncTest(){ Debug.Log("Come from jsTest.js"); }
+ 
+在其他脚本里调用此函数只需jsTest.FuncTest();
+ 
+如果在Assets的其他文件夹内有同名脚本文件，则Unity3D则会报错 “Scripts named 'Test.js' exist in multiple locations (Assets/jsTest/Test.js). Please rename one of the scripts to a unique name."”
